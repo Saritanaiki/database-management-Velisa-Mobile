@@ -12,7 +12,10 @@ Each Velisa customer has a unique phone number, a sim card number and an account
 **Tasks:**
 
 •	Develop an Entity-Relationship model of the information requirements for the use case.
+
 •	Translate the model into an equivalent relational schema. Specify all relation headings, indicating primary and foreign keys. 
-•	Implement the entities from your relational schema in SQL,
+
+•	Implement the entities from your relational schema in SQL
+
 •	Execute 5 test cases for the SQL database technology and implement using queries and show the output.
 
