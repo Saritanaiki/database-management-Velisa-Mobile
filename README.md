@@ -22,3 +22,5 @@ Each Velisa customer has a unique phone number, a sim card number and an account
 
 •	Execute 5 test cases for the SQL database technology and implement using queries and show the output.
 
+
+![image](https://github.com/Saritanaiki/database-management-Velisa-Mobile/assets/103121228/4f2fe7bf-b43f-4e22-9653-b490db31220f)
