@@ -172,7 +172,6 @@ Not applicable for our model
 
 Below is the diagrammatic representation of the relational schema
 
-
 ![image](https://github.com/Saritanaiki/database-management-Velisa-Mobile/assets/103121228/8b07cc33-0ac1-43f4-bee7-d9d8c4b2b52c)
 
 
