@@ -26,7 +26,7 @@ Each Velisa customer has a unique phone number, a sim card number and an account
 
 ## **Entity Relationsip Diagram**
 
-The phone management system comprises seven strong entities: customer, call, destination, basestation, beaconmessage, callcategory and contract. Each of these entities have associated attributes, the there exist a one-to-many relationship amongst the entities as shown in the entity relationship diagram (ERD) below.
+The phone management system comprises six strong entities: customer, call, destination, basestation, beaconmessage, callcategory and contract. Each of these entities have associated attributes, the there exist a one-to-many relationship amongst the entities as shown in the entity relationship diagram (ERD) below.
 
 ![image](https://github.com/Saritanaiki/database-management-Velisa-Mobile/assets/103121228/4f2fe7bf-b43f-4e22-9653-b490db31220f)
 
@@ -37,23 +37,37 @@ In order to convert the entity relational diagram to relational schema, the foll
 **Step 1:** Convert each regular (strong) entity to a relation.
 
 **Regular (Strong) Entities**
+
 •	Customer
+
 •	Call
+
 •	Destination
+
 •	BaseStation
+
 •	BeaconMessage
+
 •	CallCategory
+
 **Outcome**
+
 •	Customer (phoneno, custID, firstname, lastname, simcardno, custAddress)
+
 •	Call (callID, duration, price, timeofcall)
+
 •	Destination (destinationID, destinationType, rate)
+
 •	BaseStation (baseStID, baseStName)
+
 •	BeaconMessage (msgID, timestamp, signalStrength)
+
 •	CallCategory (catID, cat_name)
 
 **Step 2:** Convert each weak entity into a relation with foreign keys to its identifying relations/entities (Weak entity cannot exist alone)
 
 •	Not applicable for this model
+
 **Step 3:** Convert one-to-one relationships into a UNIQUE foreign key reference from one relation to the other.
 
 •	Not applicable for this model
@@ -61,45 +75,75 @@ In order to convert the entity relational diagram to relational schema, the foll
 **Step 4:** Convert one-to-many relationships into a foreign key reference from the N-side relation to the 1-side relation.
 
 **One-to-many relationships**
+
 •	Rings
+
 •	ConnectsTo
+
 •	initiates
+
 •	Sends
+
 •	Creates
+
 •	IsType
+
 **Outcome:**
+
 •	Call (callID, duration, price, timeofcall, destinationID*, baseStID*, phoneno*, catID*)
+
 •	BeaconMessage (msgID, timestamp, signalStrength, phoneno*, baseStID*)
 
 **Step 5:** Convert many-to-many relationships into a new relation with foreign keys to the two participating entities.
+
 •	Not applicable for this model
 
 **Step 6:** Convert a multi-valued attribute into a relation with composite primary key consisting of the attribute value plus the primary key of the attribute's entity.
+
 **Multi-valued attribute**
+
 •	BS_location
+
 **Outcome:**
+
 •	BS_Location (baseStID*, postcode, city, county, country)
+
 **Step 7:** Convert n-ary relationships by creating a new relation to represent the relationship and creating foreign keys that reference the related entities.
+
 Not applicable for our model
 
 **Step 8:** (Convert subclasses and superclasses by creating a relation for each subclass and superclass and place foreign keys in the relations corresponding to subclasses)
 
 **Superclass**
+
 •	Customer
+
 •	CallCategory
+
 **Subclass**
+
 •	Contract_Customer
+
 •	PAYG_Customer
+
 •	Contract_Customer-Vadarbank
+
 •	Contract_Customer-Lukebank
+
 •	Roaming_Call
+
 •	Standard_Call
+
 **Outcome:**
 
 •	ContractCustomer (phoneno*contractID, accountNo, startDate, sortcode, IBAN, Swiftcode, bankAddress)
+
 •	PAYG_Customer (phoneno*credit)
+
 •	Contract Customer-Vadarbank (phoneno*contractID, bankcustID, dateofBirth, occupation, creditScore)
+
 •	Contract Customer-Lukebank (phoneno*contractID, backcustID)
+
 •	CallCategory (catID, cat_name, partnetNetwork, markupRate, country)
 
 **Final Conversion Outcome:**
